@@ -8,3 +8,8 @@ type Query{
   cliente(id: ID): Cliente
   clientes: [Cliente]
 }
+
+type Mutation{
+  saveClient(id: ID, nome: String, email: String): Cliente
+  deleteClient(id: ID): Boolean
+}

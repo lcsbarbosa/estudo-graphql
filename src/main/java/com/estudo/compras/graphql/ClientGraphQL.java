@@ -21,4 +21,17 @@ public class QueryGraphQL implements GraphQLQueryResolver {
   public List<Cliente> clientes(){
     return clienteRepository.findAll();
   }
+
+  public Cliente saveClient(Long id, String nome, String email) {
+    Cliente client = new Cliente();
+    client.setId(id);
+    client.setNome(nome);
+    client.setEmail(email);
+
+    return clientService.save(client);
+  }
+
+  public Boolean deleteClient(Long id){
+    return clientService.deleteById(id);
+  }
 }
