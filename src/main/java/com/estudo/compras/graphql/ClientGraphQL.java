@@ -1,25 +1,24 @@
-package com.estudo.compras;
+package com.estudo.compras.graphql;
 
+import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import com.estudo.compras.entitie.Cliente;
-import com.estudo.compras.repository.ClienteRepository;
-import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class QueryGraphQL implements GraphQLQueryResolver {
+public class ClientGraphQL implements GraphQLQueryResolver, GraphQLMutationResolver {
 
   @Autowired
-  private ClienteRepository clienteRepository;
+  private ClientService clientService;
 
-  public Cliente cliente(Long id){
-    return clienteRepository.findById(id).orElse(null);
+  public Cliente client(Long id) {
+    return clientService.findById(id);
   }
 
-  public List<Cliente> clientes(){
-    return clienteRepository.findAll();
+  public List<Cliente> clients() {
+    return clientService.findAll();
   }
 
   public Cliente saveClient(Long id, String nome, String email) {

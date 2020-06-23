@@ -5,8 +5,8 @@ type Cliente{
 }
 
 type Query{
-  cliente(id: ID): Cliente
-  clientes: [Cliente]
+  client(id: ID): Cliente
+  clients: [Cliente]
 }
 
 type Mutation{
