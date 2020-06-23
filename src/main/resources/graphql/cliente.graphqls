@@ -1,15 +1,21 @@
 type Cliente{
-  id: ID,
+  id: ID!,
   nome: String,
   email: String
 }
 
+input ClienteInput{
+  id: ID,
+  nome: String!,
+  email: String!
+}
+
 type Query{
-  client(id: ID): Cliente
-  clients: [Cliente]
+  client(id: ID!): Cliente
+  clients: [Cliente]!
 }
 
 type Mutation{
-  saveClient(id: ID, nome: String, email: String): Cliente
-  deleteClient(id: ID): Boolean
+  saveClient(client: ClienteInput): Cliente!
+  deleteClient(id: ID!): Boolean!
 }
