@@ -1,4 +1,4 @@
-package com.estudo.compras.graphql;
+package com.estudo.compras.graphql.service;
 
 import com.estudo.compras.entitie.Cliente;
 import com.estudo.compras.repository.ClienteRepository;
