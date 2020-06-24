@@ -1,3 +1,10 @@
-type Query{
-  hello: String
+type Produto{
+  id: ID!,
+  nome: String,
+  valor: Float
+}
+
+extend type Query{
+  product(id: ID!): Produto
+  products: [Produto]
 }

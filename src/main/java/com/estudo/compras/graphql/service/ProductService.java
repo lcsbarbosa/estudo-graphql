@@ -2,6 +2,7 @@ package com.estudo.compras.graphql.service;
 
 import com.estudo.compras.entitie.Produto;
 import com.estudo.compras.repository.ProductRepository;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,5 +14,9 @@ public class ProductService {
 
   public Produto findById(Long id){
     return repository.findById(id).orElse(null);
+  }
+
+  public List<Produto> findAll() {
+    return repository.findAll();
   }
 }
