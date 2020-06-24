@@ -10,7 +10,7 @@ input ClienteInput{
   email: String!
 }
 
-type Query{
+extend type Query{
   client(id: ID!): Cliente
   clients: [Cliente]!
 }
