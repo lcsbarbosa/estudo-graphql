@@ -4,7 +4,18 @@ type Produto{
   valor: Float
 }
 
+input ProdutoInput{
+  id: ID,
+  nome: String!,
+  valor: Float
+}
+
 extend type Query{
   product(id: ID!): Produto
-  products: [Produto]
+  products: [Produto]!
+}
+
+extend type Mutation{
+  saveProduct(product: ProdutoInput): Produto!
+  deleteProduct(id: ID!): Boolean!
 }
