@@ -1,18 +1,17 @@
 package com.estudo.compras.graphql.service;
 
 import com.estudo.compras.entitie.Produto;
-import com.estudo.compras.entitie.ProdutoInput;
-import com.estudo.compras.repository.ProductRepository;
+import com.estudo.compras.repository.ProdutoRepository;
 import java.util.List;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ProductService {
+public class ProdutoService {
 
   @Autowired
-  private ProductRepository repository;
+  private ProdutoRepository repository;
 
   public Produto findById(Long id){
     return repository.findById(id).orElse(null);

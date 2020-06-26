@@ -11,11 +11,11 @@ input ProdutoInput{
 }
 
 extend type Query{
-  product(id: ID!): Produto
-  products: [Produto]!
+  produto(id: ID!): Produto
+  produtos: [Produto]!
 }
 
 extend type Mutation{
-  saveProduct(product: ProdutoInput): Produto!
-  deleteProduct(id: ID!): Boolean!
+  saveProduto(produto: ProdutoInput): Produto!
+  deleteProduto(id: ID!): Boolean!
 }
